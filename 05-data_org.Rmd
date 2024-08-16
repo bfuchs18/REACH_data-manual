@@ -1,0 +1,115 @@
+# Data Organization
+
+Data are stored on 2 servers:
+
+1.  OneDrive (The cloud storage service used by Penn State)
+2.  Roar Collab (Penn State's High Performance Computing Cluster)
+
+Survey and task data are stored on both servers, while imaging data is stored on Roar Collab only (due to file size).
+
+Data on OneDrive are stored in the folder: b-childfoodlab_Shared/Active_Studies/MarketingResilienceRO1_8242020/ParticipantData
+
+Data on Roar Collab are stored in the folder: storage/group/klk3/default/R01_Marketing
+
+On OneDrive, the directory structure looks like:
+
+```         
+├── b-childfoodlab_Shared
+    └── Active_Studies
+        └── MarketingResilienceRO1_8242020
+            └── ParticipantData
+                ├── untouchedRaw
+                └── bids
+                    ├── sourcedata
+                    ├── rawdata
+                    ├── phenotype
+                    ├── derivatives
+                    └── code
+```
+
+On Roar Collab, the directory structure looks like:
+
+```         
+├── storage
+    └── group
+        └── klk37
+            └── default
+                └── R01_Marketing
+                    ├── untouchedRaw
+                    └── bids
+                        ├── sourcedata
+                        ├── rawdata
+                        ├── phenotype
+                        ├── derivatives
+                        └── code
+```
+
+Notice that the sub-directories within ParticipantData/ (on OneDrive) and R01_Marketing/ (on Roar Collab) are the same. This enables syncing files in untouchedRaw/ and bids/ between the servers. The contents of these folders are summarized in Table 2 and detailed in subsections below.
+
+<https://raw.githubusercontent.com/aerobatic/markdown-content/master/docs/directory-structure.md>
+
+| Directory        | Description                                                                                                                                                                        |
+|--------------------|----------------------------------------------------|
+| untouchedRaw     | Contains task data in its rawest form. Data in this folder serves as a backup and should never be directly worked from.                                                            |
+| bids             | Contains survey\*, task, and neuroimaging data across various stages of processing, organized according to BIDS standards                                                          |
+| bids/sourcedata  | Contains copies of task and neuroimaging data from untouchedRaw and survey data downloaded from redcap. Data in this folder will be organized into bids/rawdata and bids/phenotype |
+| bids/rawdata     | Contains task and neuroimaging data organized according to BIDS standards                                                                                                          |
+| bids/phenotype   | Contains survey data organized according to BIDS standards                                                                                                                         |
+| bids/derivatives | Contains processed data or generated datasets                                                                                                                                      |
+| bids/code        | Contains code to organize and process data within bids/                                                                                                                            |
+
+: Data directories and descriptions
+
+\* Survey refers to data collected in survey format via redcap, including questionnaires and researcher-entered data (e.g., intake measurements)
+
+## untouchedRaw
+
+untouchedRaw/ contains task and MRI data transferred directly from the source. For task data, the source is where the task program exports the data; for imaging (DICOM) data, the source is where SLEIC uploads the data. untouchedRaw/ is organized by task, such that data for each task is found within a task-specific folder:
+
+```         
+├── untouchedRaw
+    ├── foodview_task
+    ├── hrv
+    ├── nih-toolbox
+    ├── pit_task
+    ├── rrv_task
+    ├── rsa
+    ├── space_game
+    ├── sst
+    ├── tictach_task
+    └── DICOMS
+```
+
+\*DICOMS are stored on Roar Collab only due to size
+
+## bids
+
+Data within bids/ are organized to comply with the [Brain Imaging Data Structure](https://bids.neuroimaging.io/).
+
+### bids/sourcedata
+
+bids/sourcedata/ contains copies of data from untouchedRaw/ organized by subject ('sub') and session ('ses'). Each subject has a folder (sub-{label}) in /sourcedata, and within each subject folder are session folders (ses-{label}). Session folders separate data collected at baseline (session 1) and follow-up (session 2). Within session folders, task data are stored in beh/ and MRI data are stored in dicom/.
+
+bids/sourcedata/ also contains survey data downloaded from REDCap, stored in /phenotype.
+
+```         
+├── sourcedata
+    ├── sub-{label}
+        ├── ses-1
+            ├── dicom
+                ├── ser*
+                ├── nii               
+            ├── beh
+        ├── ses-2
+            ├── beh
+    ├── phenotype
+        ├── *.tsv
+```
+
+### bids/rawdata
+
+### bids/phenotype
+
+### bids/derivatives
+
+### bids/code

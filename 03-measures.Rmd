@@ -1,0 +1,81 @@
+# Outcome Measures
+
+
+
+## Laboratory Intake Assessments
+
+### Test Meal
+
+### Eating in the Absence of Hunger
+
+#### EAH wanting questionnaire
+
+### Fullness
+
+## Anthropometrics
+
+### Height and Weight
+
+### Dual-Energy X-Ray Absorptiometry (DXA) {#dxa}
+
+
+## Actigraphy
+
+## WASI 
+## Behavioral tasks
+
+### Reward-Related Decision-Making (Space Game) {#rrdm}
+
+### Pavlovian-to-Instrumental Transfer Task (PIT) {#pit}
+
+### NIH toolbox {#nih-toolbox}
+
+## MRI tasks
+### Structural Scan
+### Food View Task {#foodview}
+### Stop Signal Task {#sst}
+
+
+## Questionnaires
+
+### Child-reported
+
+#### Kid's Brand Awareness Survey (KBAS) {#kbas}
+#### Child Screen Time Questionnaire (STQ) {#stq}
+#### Loss of Control Eating Questionnaire (LOC) {#loc}
+#### Pictorial Personality Trains Questionnaire (PPTQ) {#pptq}
+#### Stress in Children Questionnaire (SIC) {#sic}
+
+### Parent-reported
+
+#### Visit 1 Demographics {#v1-demo}
+#### Parent Household Demographics Questionnaire {#household-demo}
+#### Alcohol Use Disorders Identification Test (AUDIT) {#audit}
+#### Behavioral Inhibition System/Behavioral Activation System (BIS/BAS) {#bisbas}
+#### Behavioral Rating Inventory of Executive Function-2 (BRIEF-2) {#brief}
+#### Binge Eating Scale (BES) {#bes}
+#### Child Behavior Questionnaire (CBQ) {#cbq}
+Short form version 1
+
+#### Children's Leisure Activities Study Survey (CLASS) {#class}
+#### Community Childhood Hunger Identification Project (CCHIP) {#cchip}
+#### Child Feeding Quesstionnaire (CFQ) {#cfq}
+#### Children's Eating Behavior Quesstionnaire (CEBQ) {#cebq}
+#### Children's Sleep Habits Questionnaire - Abreviated (CSHQ-A) {#cshq}
+#### Comprehensive Feeding Practices Questionnaire (CFPQ) {#cfpq}
+#### Confusion, Hubbub, and Order Scale (CHAOS) {#chaos}
+#### Dutch Eating Behavior Questionnaire (DEBQ) {#debq}
+#### External Food Cues Responsiveness Scale (EFCR) {#efcr}
+#### Feeding Strategies Questionnaire (FSQ) {#fsq}
+#### Fulkerson Home Food Inventory (FHFI) {#fhfi}
+#### Household Food Insecurity Access Scale (HFIAS) {#hfias}
+#### Lifestyle Behavior Checklist (LBC) {#lbc}
+#### Problematic Media Use Measure (PMUM) {#pmum}
+#### Perceived Stress Scale (PSS) {#pss}
+#### Parental Strategies to Teach Children about Advertising (PSTCA) {#pstca}
+#### Parent Weight Loss Behavior Questionnaire (PWLB) {#pwlb}
+#### Ranking Food Item Questionnaire (RANK) {#rank}
+#### Structure and Control in Parent Feeding (SCPF) {#scpf}
+#### Sensitivity to Punishment and Reward Questionnaire (SPSRQ) {#spsrq}
+#### Three Factor Eating Questionnaire - Revised (TFEQ) {#tfeq}
+#### US Household Food Security Survey Module: Three Stage (HFSSM) {#hfssm}

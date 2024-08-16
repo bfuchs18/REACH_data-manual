@@ -1,0 +1,103 @@
+# Data Processing Software
+
+### [R01_Marketing](https://github.com/bfuchs18/R01_Marketing)
+
+-   R01_Marketing is a GitHub repository that contains a collection of scripts to process and analyze REACH data. The scripts in this repository use the software outlined below.
+-   R01_Marketing can be cloned or downloaded from GitHub
+
+### [dataREACHr](https://github.com/bfuchs18/dataREACHr) {#datareachr}
+
+-   dataREACHr is an R package that contains functions to process and organize survey and task and phenotype data into BIDS
+-   dataREACHr can be installed from GitHub in R using the devtools package:
+
+```{r install-datareachr, eval = FALSE}
+devtools::install_github("alainapearce/datareachr")
+```
+
+### [dataprepr](https://github.com/alainapearce/dataprepr)
+
+-   dataprepr is an R package that contains functions to score a variety of validated questionnaires
+    -   This is a dependency of [dataREACHr](#datareachr)
+-   Dataprepr can be installed from GitHub in R using the devtools package:
+
+```{r install-dataprepr, eval = FALSE}
+devtools::install_github("alainapearce/dataprepr")
+```
+
+### [dcm2bids](https://unfmontreal.github.io/Dcm2Bids/3.1.1/) {#dcm2bids}
+
+-   dcm2bids is a program that reorganizes NIfTI files into the Brain Imaging Data Structure (BIDS)
+-   Data processing scripts expect dcm2bids to be loaded via a conda environment described in /bids/code/dcm2bids/dcm2bids.yml.
+
+The conda env can be created from the yml file by running the following commands in a Bash terminal on Roar Collab
+
+```{bash, eval = FALSE}
+# if conda has not been initialized, may need to run this first and then close and reopen terminal
+conda init bash 
+
+# Navigate to yml file
+cd /storage/group/klk37/default/R01_Marketing/bids/code/dcm2bids/
+
+# Load anaconda
+module load anaconda
+
+# Create a conda environment based on yml file
+## Note, this will create the conda env in a user-specific directory, so every user has to create their own environment
+conda env create -f dcm2bids.yml
+
+# activate environment
+conda activate dcm2bids
+```
+
+### [pydeface](https://github.com/poldracklab/pydeface) {#pydeface}
+
+-   pydeface is a tool to remove facial structure from (i.e., "deface") MRI images.
+-   pydeface requires FSL
+-   Data processing scripts expect pydeface to be loaded via a conda environment described in /bids/code/dcm2bids/dcm2bids.yml. See the [dcm2bids](#dcm2bids) section for details on how to create the conda environment.
+
+### [FSL](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki) {#fsl}
+
+-   FSL is a library of analysis tools for FMRI, MRI and diffusion brain imaging data
+-   FSL is available for all users on Roar Collab
+
+```{bash, eval = FALSE}
+module load fsl
+```
+
+### [mriqc](https://mriqc.readthedocs.io/en/stable/index.html) {#mriqc}
+
+-   MRIQC extracts no-reference IQMs (image quality metrics) from structural (T1w and T2w) and functional MRI (magnetic resonance imaging) data.
+
+A container with MRIQC version 24.0.0 was built by running the following command in a Bash terminal on Roar Collab
+
+```{bash, eval = FALSE}
+singularity build /storage/group/klk37/default/sw/mriqc-24.0.0.simg  docker://nipreps/mriqc:24.0.0
+```
+
+### [fmriprep](https://fmriprep.org/en/stable/outputs.html) {#fmriprep}
+
+-   fMRIprep is a preprocessing software for MRI data
+-   On Roar Collab, fMRIprep version 24.0.1 is available in a Singularity Container within /storage/group/klk37/default/sw/fmriprep-23.2.0.simg. By using this singularity container, we can use a version of fMRIprep that is not presently available to all users of Roar Collab.
+
+The container was created by running the following command in a Bash terminal on Roar Collab
+
+```{bash, eval = FALSE}
+singularity build /storage/group/klk37/default/sw/fmriprep-24.0.1.simg docker://nipreps/fmriprep:24.0.1
+```
+
+-   Version 24.0.1 was selected for processing because it is (or was) the most recent version available. To use other versions, build another singularity container by specifying a different version number in the command above.
+
+```{bash, eval = FALSE}
+
+```
+
+### [afni](https://afni.nimh.nih.gov/) {#afni}
+
+-   Analysis of Functional NeuroImages (AFNI) is a software suite of programs and scripts to analyse and visualize MRI data
+-   On Roar Collab, AFNI version XXX is available in a Singularity Container within /storage/group/klk37/default/sw/XXXX. By using this singularity container, we can use a version of AFNI that is not presently available to all users of Roar Collab.
+
+The container was created by running the following command in a Bash terminal on Roar Collab
+
+```{bash, eval = FALSE}
+
+```

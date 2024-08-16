@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Data Processing Software | Study REACH Data Manual</title>
+  <meta name="description" content="data manual for Study REACH of Keller Lab" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Data Processing Software | Study REACH Data Manual" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="data manual for Study REACH of Keller Lab" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Data Processing Software | Study REACH Data Manual" />
+  
+  <meta name="twitter:description" content="data manual for Study REACH of Keller Lab" />
+  
+
+<meta name="author" content="Bari Fuchs" />
+
+
+<meta name="date" content="2024-07-24" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="data-organization.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="study-design.html"><a href="study-design.html"><i class="fa fa-check"></i><b>2</b> Study Design</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="study-design.html"><a href="study-design.html#baseline-visits"><i class="fa fa-check"></i><b>2.1</b> Baseline visits (session 1)</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="study-design.html"><a href="study-design.html#visit-1"><i class="fa fa-check"></i><b>2.1.1</b> Visit 1</a></li>
+<li class="chapter" data-level="2.1.2" data-path="study-design.html"><a href="study-design.html#visits-2-4"><i class="fa fa-check"></i><b>2.1.2</b> Visits 2-4</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="study-design.html"><a href="study-design.html#follow-up-visits"><i class="fa fa-check"></i><b>2.2</b> Follow-up (session 2)</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="study-design.html"><a href="study-design.html#visit-5"><i class="fa fa-check"></i><b>2.2.1</b> Visit 5</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="outcome-measures.html"><a href="outcome-measures.html"><i class="fa fa-check"></i><b>3</b> Outcome Measures</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="outcome-measures.html"><a href="outcome-measures.html#laboratory-intake-assessments"><i class="fa fa-check"></i><b>3.1</b> Laboratory Intake Assessments</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="outcome-measures.html"><a href="outcome-measures.html#test-meal"><i class="fa fa-check"></i><b>3.1.1</b> Test Meal</a></li>
+<li class="chapter" data-level="3.1.2" data-path="outcome-measures.html"><a href="outcome-measures.html#eating-in-the-absence-of-hunger"><i class="fa fa-check"></i><b>3.1.2</b> Eating in the Absence of Hunger</a></li>
+<li class="chapter" data-level="3.1.3" data-path="outcome-measures.html"><a href="outcome-measures.html#fullness"><i class="fa fa-check"></i><b>3.1.3</b> Fullness</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="outcome-measures.html"><a href="outcome-measures.html#anthropometrics"><i class="fa fa-check"></i><b>3.2</b> Anthropometrics</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="outcome-measures.html"><a href="outcome-measures.html#height-and-weight"><i class="fa fa-check"></i><b>3.2.1</b> Height and Weight</a></li>
+<li class="chapter" data-level="3.2.2" data-path="outcome-measures.html"><a href="outcome-measures.html#dxa"><i class="fa fa-check"></i><b>3.2.2</b> Dual-Energy X-Ray Absorptiometry (DXA)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="outcome-measures.html"><a href="outcome-measures.html#actigraphy"><i class="fa fa-check"></i><b>3.3</b> Actigraphy</a></li>
+<li class="chapter" data-level="3.4" data-path="outcome-measures.html"><a href="outcome-measures.html#wasi"><i class="fa fa-check"></i><b>3.4</b> WASI</a></li>
+<li class="chapter" data-level="3.5" data-path="outcome-measures.html"><a href="outcome-measures.html#behavioral-tasks"><i class="fa fa-check"></i><b>3.5</b> Behavioral tasks</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="outcome-measures.html"><a href="outcome-measures.html#rrdm"><i class="fa fa-check"></i><b>3.5.1</b> Reward-Related Decision-Making (Space Game)</a></li>
+<li class="chapter" data-level="3.5.2" data-path="outcome-measures.html"><a href="outcome-measures.html#pit"><i class="fa fa-check"></i><b>3.5.2</b> Pavlovian-to-Instrumental Transfer Task (PIT)</a></li>
+<li class="chapter" data-level="3.5.3" data-path="outcome-measures.html"><a href="outcome-measures.html#nih-toolbox"><i class="fa fa-check"></i><b>3.5.3</b> NIH toolbox</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="outcome-measures.html"><a href="outcome-measures.html#mri-tasks"><i class="fa fa-check"></i><b>3.6</b> MRI tasks</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="outcome-measures.html"><a href="outcome-measures.html#structural-scan"><i class="fa fa-check"></i><b>3.6.1</b> Structural Scan</a></li>
+<li class="chapter" data-level="3.6.2" data-path="outcome-measures.html"><a href="outcome-measures.html#foodview"><i class="fa fa-check"></i><b>3.6.2</b> Food View Task</a></li>
+<li class="chapter" data-level="3.6.3" data-path="outcome-measures.html"><a href="outcome-measures.html#sst"><i class="fa fa-check"></i><b>3.6.3</b> Stop Signal Task</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="outcome-measures.html"><a href="outcome-measures.html#questionnaires"><i class="fa fa-check"></i><b>3.7</b> Questionnaires</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="outcome-measures.html"><a href="outcome-measures.html#child-reported"><i class="fa fa-check"></i><b>3.7.1</b> Child-reported</a></li>
+<li class="chapter" data-level="3.7.2" data-path="outcome-measures.html"><a href="outcome-measures.html#parent-reported"><i class="fa fa-check"></i><b>3.7.2</b> Parent-reported</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-processing.html"><a href="data-processing.html"><i class="fa fa-check"></i><b>4</b> Data processing</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data-processing.html"><a href="data-processing.html#example-one"><i class="fa fa-check"></i><b>4.1</b> Example one</a></li>
+<li class="chapter" data-level="4.2" data-path="data-processing.html"><a href="data-processing.html#example-two"><i class="fa fa-check"></i><b>4.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="data-organization.html"><a href="data-organization.html"><i class="fa fa-check"></i><b>5</b> Data Organization</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="data-organization.html"><a href="data-organization.html#untouchedraw"><i class="fa fa-check"></i><b>5.1</b> untouchedRaw</a></li>
+<li class="chapter" data-level="5.2" data-path="data-organization.html"><a href="data-organization.html#bids"><i class="fa fa-check"></i><b>5.2</b> bids</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="data-organization.html"><a href="data-organization.html#bidssourcedata"><i class="fa fa-check"></i><b>5.2.1</b> bids/sourcedata</a></li>
+<li class="chapter" data-level="5.2.2" data-path="data-organization.html"><a href="data-organization.html#bidsrawdata"><i class="fa fa-check"></i><b>5.2.2</b> bids/rawdata</a></li>
+<li class="chapter" data-level="5.2.3" data-path="data-organization.html"><a href="data-organization.html#bidsphenotype"><i class="fa fa-check"></i><b>5.2.3</b> bids/phenotype</a></li>
+<li class="chapter" data-level="5.2.4" data-path="data-organization.html"><a href="data-organization.html#bidsderivatives"><i class="fa fa-check"></i><b>5.2.4</b> bids/derivatives</a></li>
+<li class="chapter" data-level="5.2.5" data-path="data-organization.html"><a href="data-organization.html#bidscode"><i class="fa fa-check"></i><b>5.2.5</b> bids/code</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="data-processing-software.html"><a href="data-processing-software.html"><i class="fa fa-check"></i><b>6</b> Data Processing Software</a>
+<ul>
+<li class="chapter" data-level="6.0.1" data-path="data-processing-software.html"><a href="data-processing-software.html#r01_marketing"><i class="fa fa-check"></i><b>6.0.1</b> R01_Marketing</a></li>
+<li class="chapter" data-level="6.0.2" data-path="data-processing-software.html"><a href="data-processing-software.html#datareachr"><i class="fa fa-check"></i><b>6.0.2</b> dataREACHr</a></li>
+<li class="chapter" data-level="6.0.3" data-path="data-processing-software.html"><a href="data-processing-software.html#dataprepr"><i class="fa fa-check"></i><b>6.0.3</b> dataprepr</a></li>
+<li class="chapter" data-level="6.0.4" data-path="data-processing-software.html"><a href="data-processing-software.html#dcm2bids"><i class="fa fa-check"></i><b>6.0.4</b> dcm2bids</a></li>
+<li class="chapter" data-level="6.0.5" data-path="data-processing-software.html"><a href="data-processing-software.html#pydeface"><i class="fa fa-check"></i><b>6.0.5</b> pydeface</a></li>
+<li class="chapter" data-level="6.0.6" data-path="data-processing-software.html"><a href="data-processing-software.html#fsl"><i class="fa fa-check"></i><b>6.0.6</b> FSL</a></li>
+<li class="chapter" data-level="6.0.7" data-path="data-processing-software.html"><a href="data-processing-software.html#mriqc"><i class="fa fa-check"></i><b>6.0.7</b> mriqc</a></li>
+<li class="chapter" data-level="6.0.8" data-path="data-processing-software.html"><a href="data-processing-software.html#fmriprep"><i class="fa fa-check"></i><b>6.0.8</b> fmriprep</a></li>
+<li class="chapter" data-level="6.0.9" data-path="data-processing-software.html"><a href="data-processing-software.html#afni"><i class="fa fa-check"></i><b>6.0.9</b> afni</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Study REACH Data Manual</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-processing-software" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Data Processing Software<a href="data-processing-software.html#data-processing-software" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="r01_marketing" class="section level3 hasAnchor" number="6.0.1">
+<h3><span class="header-section-number">6.0.1</span> <a href="https://github.com/bfuchs18/R01_Marketing">R01_Marketing</a><a href="data-processing-software.html#r01_marketing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>R01_Marketing is a GitHub repository that contains a collection of scripts to process and analyze REACH data. The scripts in this repository use the software outlined below.</li>
+<li>R01_Marketing can be cloned or downloaded from GitHub</li>
+</ul>
+</div>
+<div id="datareachr" class="section level3 hasAnchor" number="6.0.2">
+<h3><span class="header-section-number">6.0.2</span> <a href="https://github.com/bfuchs18/dataREACHr">dataREACHr</a><a href="data-processing-software.html#datareachr" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>dataREACHr is an R package that contains functions to process and organize survey and task and phenotype data into BIDS</li>
+<li>dataREACHr can be installed from GitHub in R using the devtools package:</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="data-processing-software.html#cb5-1" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;alainapearce/datareachr&quot;</span>)</span></code></pre></div>
+</div>
+<div id="dataprepr" class="section level3 hasAnchor" number="6.0.3">
+<h3><span class="header-section-number">6.0.3</span> <a href="https://github.com/alainapearce/dataprepr">dataprepr</a><a href="data-processing-software.html#dataprepr" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>dataprepr is an R package that contains functions to score a variety of validated questionnaires
+<ul>
+<li>This is a dependency of <a href="data-processing-software.html#datareachr">dataREACHr</a></li>
+</ul></li>
+<li>Dataprepr can be installed from GitHub in R using the devtools package:</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="data-processing-software.html#cb6-1" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;alainapearce/dataprepr&quot;</span>)</span></code></pre></div>
+</div>
+<div id="dcm2bids" class="section level3 hasAnchor" number="6.0.4">
+<h3><span class="header-section-number">6.0.4</span> <a href="https://unfmontreal.github.io/Dcm2Bids/3.1.1/">dcm2bids</a><a href="data-processing-software.html#dcm2bids" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>dcm2bids is a program that reorganizes NIfTI files into the Brain Imaging Data Structure (BIDS)</li>
+<li>Data processing scripts expect dcm2bids to be loaded via a conda environment described in /bids/code/dcm2bids/dcm2bids.yml.</li>
+</ul>
+<p>The conda env can be created from the yml file by running the following commands in a Bash terminal on Roar Collab</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="data-processing-software.html#cb7-1" tabindex="-1"></a><span class="co"># if conda has not been initialized, may need to run this first and then close and reopen terminal</span></span>
+<span id="cb7-2"><a href="data-processing-software.html#cb7-2" tabindex="-1"></a><span class="ex">conda</span> init bash </span>
+<span id="cb7-3"><a href="data-processing-software.html#cb7-3" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="data-processing-software.html#cb7-4" tabindex="-1"></a><span class="co"># Navigate to yml file</span></span>
+<span id="cb7-5"><a href="data-processing-software.html#cb7-5" tabindex="-1"></a><span class="bu">cd</span> /storage/group/klk37/default/R01_Marketing/bids/code/dcm2bids/</span>
+<span id="cb7-6"><a href="data-processing-software.html#cb7-6" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="data-processing-software.html#cb7-7" tabindex="-1"></a><span class="co"># Load anaconda</span></span>
+<span id="cb7-8"><a href="data-processing-software.html#cb7-8" tabindex="-1"></a><span class="ex">module</span> load anaconda</span>
+<span id="cb7-9"><a href="data-processing-software.html#cb7-9" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="data-processing-software.html#cb7-10" tabindex="-1"></a><span class="co"># Create a conda environment based on yml file</span></span>
+<span id="cb7-11"><a href="data-processing-software.html#cb7-11" tabindex="-1"></a><span class="co">## Note, this will create the conda env in a user-specific directory, so every user has to create their own environment</span></span>
+<span id="cb7-12"><a href="data-processing-software.html#cb7-12" tabindex="-1"></a><span class="ex">conda</span> env create <span class="at">-f</span> dcm2bids.yml</span>
+<span id="cb7-13"><a href="data-processing-software.html#cb7-13" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="data-processing-software.html#cb7-14" tabindex="-1"></a><span class="co"># activate environment</span></span>
+<span id="cb7-15"><a href="data-processing-software.html#cb7-15" tabindex="-1"></a><span class="ex">conda</span> activate dcm2bids</span></code></pre></div>
+</div>
+<div id="pydeface" class="section level3 hasAnchor" number="6.0.5">
+<h3><span class="header-section-number">6.0.5</span> <a href="https://github.com/poldracklab/pydeface">pydeface</a><a href="data-processing-software.html#pydeface" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>pydeface is a tool to remove facial structure from (i.e., “deface”) MRI images.</li>
+<li>pydeface requires FSL</li>
+<li>Data processing scripts expect pydeface to be loaded via a conda environment described in /bids/code/dcm2bids/dcm2bids.yml. See the <a href="data-processing-software.html#dcm2bids">dcm2bids</a> section for details on how to create the conda environment.</li>
+</ul>
+</div>
+<div id="fsl" class="section level3 hasAnchor" number="6.0.6">
+<h3><span class="header-section-number">6.0.6</span> <a href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki">FSL</a><a href="data-processing-software.html#fsl" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>FSL is a library of analysis tools for FMRI, MRI and diffusion brain imaging data</li>
+<li>FSL is available for all users on Roar Collab</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="data-processing-software.html#cb8-1" tabindex="-1"></a><span class="ex">module</span> load fsl</span></code></pre></div>
+</div>
+<div id="mriqc" class="section level3 hasAnchor" number="6.0.7">
+<h3><span class="header-section-number">6.0.7</span> <a href="https://mriqc.readthedocs.io/en/stable/index.html">mriqc</a><a href="data-processing-software.html#mriqc" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>MRIQC extracts no-reference IQMs (image quality metrics) from structural (T1w and T2w) and functional MRI (magnetic resonance imaging) data.</li>
+</ul>
+<p>A container with MRIQC version 24.0.0 was built by running the following command in a Bash terminal on Roar Collab</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="data-processing-software.html#cb9-1" tabindex="-1"></a><span class="ex">singularity</span> build /storage/group/klk37/default/sw/mriqc-24.0.0.simg  docker://nipreps/mriqc:24.0.0</span></code></pre></div>
+</div>
+<div id="fmriprep" class="section level3 hasAnchor" number="6.0.8">
+<h3><span class="header-section-number">6.0.8</span> <a href="https://fmriprep.org/en/stable/outputs.html">fmriprep</a><a href="data-processing-software.html#fmriprep" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>fMRIprep is a preprocessing software for MRI data</li>
+<li>On Roar Collab, fMRIprep version 24.0.1 is available in a Singularity Container within /storage/group/klk37/default/sw/fmriprep-23.2.0.simg. By using this singularity container, we can use a version of fMRIprep that is not presently available to all users of Roar Collab.</li>
+</ul>
+<p>The container was created by running the following command in a Bash terminal on Roar Collab</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="data-processing-software.html#cb10-1" tabindex="-1"></a><span class="ex">singularity</span> build /storage/group/klk37/default/sw/fmriprep-24.0.1.simg docker://nipreps/fmriprep:24.0.1</span></code></pre></div>
+<ul>
+<li>Version 24.0.1 was selected for processing because it is (or was) the most recent version available. To use other versions, build another singularity container by specifying a different version number in the command above.</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"></code></pre></div>
+</div>
+<div id="afni" class="section level3 hasAnchor" number="6.0.9">
+<h3><span class="header-section-number">6.0.9</span> <a href="https://afni.nimh.nih.gov/">afni</a><a href="data-processing-software.html#afni" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Analysis of Functional NeuroImages (AFNI) is a software suite of programs and scripts to analyse and visualize MRI data</li>
+<li>On Roar Collab, AFNI version XXX is available in a Singularity Container within /storage/group/klk37/default/sw/XXXX. By using this singularity container, we can use a version of AFNI that is not presently available to all users of Roar Collab.</li>
+</ul>
+<p>The container was created by running the following command in a Bash terminal on Roar Collab</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"></code></pre></div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data-organization.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/06-processing_software.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

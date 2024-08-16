@@ -1,0 +1,5 @@
+# Introduction {#intro}
+
+This is the data manual for the Resiliency to the Effects of Advertising in Children (REACH) Study at Penn State (PI: Keller, 5R01DK126050). Within this data manual, you will find descriptions of the various measures collected and information about how data is organized and processed.
+
+test 
